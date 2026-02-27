@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gigi | Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
+    body {
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #aaa;
+      margin-bottom: 30px;
+      animation: fadeIn 2.5s ease-in-out forwards;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1px solid white;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: white;
+      color: black;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* subtle floating dots background */
+    .dot {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: float 20s linear infinite;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh);
+      }
+      to {
+        transform: translateY(-10vh);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Hi, I'm Gigi</h1>
+    <p>
+      Interactive Digital Media Student <br>
+      Creative Coding • Visual Systems • Digital Storytelling
+    </p>
+    <a class="btn" href="https://github.com/" target="_blank">View My GitHub</a>
+  </div>
+
+  <script>
+    // Generate floating dots
+    for (let i = 0; i < 30; i++) {
+      let dot = document.createElement("div");
+      dot.classList.add("dot");
+      dot.style.left = Math.random() * 100 + "vw";
+      dot.style.animationDuration = (15 + Math.random() * 20) + "s";
+      document.body.appendChild(dot);
+    }
+  </script>
+
+</body>
+</html>
